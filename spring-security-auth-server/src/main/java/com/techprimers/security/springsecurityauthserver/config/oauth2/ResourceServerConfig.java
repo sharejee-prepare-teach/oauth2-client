@@ -33,11 +33,10 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
         auth.parentAuthenticationManager(authenticationManager)
                 .inMemoryAuthentication()
-                .withUser("Peter")
-                .password("peter")
+                .withUser("dba")
+                .password("dba")
                 .roles("USER");
     }
 }
