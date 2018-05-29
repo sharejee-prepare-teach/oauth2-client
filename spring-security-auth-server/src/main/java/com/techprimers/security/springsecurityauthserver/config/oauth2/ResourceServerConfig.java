@@ -1,4 +1,4 @@
-package com.techprimers.security.springsecurityauthserver.config;
+package com.techprimers.security.springsecurityauthserver.config.oauth2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
 
 
-    @Autowired
+    /*@Autowired
     private AuthenticationManager authenticationManager;
 
     @Override
@@ -38,5 +38,13 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
                 .withUser("dba")
                 .password("dba")
                 .roles("USER");
+    }*/
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.requestMatchers()
+                .antMatchers("/login","/oauth/authorize")
+                .and().authorizeRequests().anyRequest().authenticated()
+                .and().formLogin().permitAll();
     }
+
 }

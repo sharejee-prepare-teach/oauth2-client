@@ -1,4 +1,4 @@
-package com.techprimers.security.springsecurityauthserver.controllers;
+package com.techprimers.security.springsecurityauthserver.domain.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
